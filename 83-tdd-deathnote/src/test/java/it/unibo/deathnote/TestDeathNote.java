@@ -14,7 +14,7 @@ import it.unibo.deathnote.impl.DeathNoteImpl;
 
 public class TestDeathNote {
 
-    private static final int DETAILS_OVERTIME_WAIT = 6100;
+    private static final int DETAILS_OVERTIME_WAIT = 6500;
     private static final int CAUSE_OVERTIME_WAIT = 100;
     private final String testName = "Light";
     private final String testName2 = "Pippo";
@@ -108,7 +108,7 @@ public class TestDeathNote {
             this.dNote.writeName(testName2);
 
             Thread.sleep(DETAILS_OVERTIME_WAIT);
-            assertTrue(this.dNote.writeDeathCause("rocket explosion"));
+            assertFalse(this.dNote.writeDeathCause("rocket explosion"));
             assertEquals("ran for too long", this.dNote.getDeathDetails(testName));
         }
     }
