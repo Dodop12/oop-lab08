@@ -81,13 +81,13 @@ public class TestDeathNote {
             this.dNote.writeName(testName2);
 
             assertTrue(this.dNote.writeDeathCause("karting accident"));
-            assertEquals("karting accident", dNote.getDeathCause(testName));
+            assertEquals("karting accident", dNote.getDeathCause(testName2));
 
             Thread.sleep(CAUSE_OVERTIME_WAIT); // Pauses the program: the method must declare "throws
                                                // InterruptException"
 
-            assertTrue(this.dNote.writeDeathCause("suicide"));
-            assertEquals("karting accident", dNote.getDeathCause(testName));
+            assertFalse(this.dNote.writeDeathCause("suicide"));
+            assertEquals("karting accident", dNote.getDeathCause(testName2));
         }
     }
 
