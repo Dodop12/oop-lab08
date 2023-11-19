@@ -1,0 +1,11 @@
+*.class
+
+*.jar
+bin/
+
+build/
+.gradle
+!gradle-wrapper.jar
+
+.vscode/
+.code-workspace
