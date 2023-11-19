@@ -17,7 +17,7 @@ public class DeathNoteImpl implements DeathNote {
     private long lastCauseTime;
 
     public DeathNoteImpl() {
-        deathnote = new HashMap<>();
+        this.deathnote = new HashMap<>();
     }
 
     @Override
@@ -31,7 +31,7 @@ public class DeathNoteImpl implements DeathNote {
     @Override
     public void writeName(final String name) {
         Objects.requireNonNull(name);
-        deathnote.put(name, new Death());
+        this.deathnote.put(name, new Death());
         this.lastDeathTime = System.currentTimeMillis();
         this.lastCauseTime = this.lastDeathTime;
         this.lastName = name;
@@ -84,7 +84,7 @@ public class DeathNoteImpl implements DeathNote {
 
     @Override
     public boolean isNameWritten(final String name) {
-        return deathnote.containsKey(name);
+        return this.deathnote.containsKey(name);
     }
 
     private static final class Death {
