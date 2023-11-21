@@ -110,11 +110,11 @@ public class DeathNoteImpl implements DeathNote {
             return deathDetails;
         }
 
-        public void setDeathCause(String deathCause) {
+        public void setDeathCause(final String deathCause) {
             this.deathCause = deathCause;
         }
 
-        public void setDeathDetails(String deathDetails) {
+        public void setDeathDetails(final String deathDetails) {
             this.deathDetails = deathDetails;
         }
     }
